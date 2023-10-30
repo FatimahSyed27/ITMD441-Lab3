@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f1f1f1;
+    background-color: #8afca3; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,23 +9,24 @@ body {
 }
 
 .container {
-    background-color: #fff;
+    background-color: #228B22; 
     border: 1px solid #ccc;
+    border-radius: 10px;
     padding: 20px;
-    border-radius: 8px;
-    text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 300px; 
 }
 
 h1 {
     font-size: 24px;
+    color: #fff; 
 }
 
 .form-group {
     margin: 10px 0;
 }
 
-input[type="text"], input[type="range"] {
+input[type="number"], input[type="range"] {
     width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
@@ -33,11 +34,10 @@ input[type="text"], input[type="range"] {
 }
 
 input[type="text"][disabled] {
-    background-color: #f1f1f1;
+    background-color: #f0f0f0;
+    font-weight: bold;
 }
 
 input[type="range"] {
     width: 95%;
 }
-
-
