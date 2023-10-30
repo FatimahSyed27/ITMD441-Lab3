@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const tForm = document.getElementById("tForm");
-    const fullTotal = document.getElementById("fullTotal");
+    const billTotal = document.getElementById("billTotal");
     const tipPer = document.getElementById("tipPer");
     const tipSli = document.getElementById("tipSli");
     const tipAmount = document.getElementById("tipAmount");
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     tForm.addEventListener("input", updateTipAmount);
 
     function updateTipAmount() {
-        const bill = parseFloat(fullTotal.value);
+        const bill = parseFloat(billTotal.value);
         const tipPercent = tipSli.value;
         const tip = (bill * tipPercent) / 100;
         const total = bill + tip;
