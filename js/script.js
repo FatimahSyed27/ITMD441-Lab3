@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const totalBillWithTip = document.getElementById("totalBillWithTip");
 
     tForm.addEventListener("input", updateTipAmount);
+    billTotal.addEventListener("input", updateTipAmount);
+    tipSli.addEventListener("input", updateTipAmount);
 
     function updateTipAmount() {
         const bill = parseFloat(billTotal.value);
@@ -24,4 +26,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 });
+
+
+
+
+
+
 
