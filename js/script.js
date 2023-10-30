@@ -1,32 +1,29 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const tForm = document.getElementById("tForm");
+document.addEventListener("DOMContentLoaded", function() {
+    const tipForm = document.getElementById("tipForm");
     const billTotal = document.getElementById("billTotal");
-    const tipPer = document.getElementById("tipPer");
-    const tipSli = document.getElementById("tipSli");
+    const tipPercentage = document.getElementById("tipPercentage");
     const tipAmount = document.getElementById("tipAmount");
-    const totalBillWithTip = document.getElementById("totalBillWithTip");
+    const totalWithTip = document.getElementById("totalWithTip");
+    const tipSlider = document.getElementById("tipSlider");
 
-    tForm.addEventListener("input", updateTipAmount);
-    billTotal.addEventListener("input", updateTipAmount);
-    tipSli.addEventListener("input", updateTipAmount);
+    tipForm.addEventListener("input", calculateTip);
 
-    function updateTipAmount() {
+    function calculateTip() {
         const bill = parseFloat(billTotal.value);
-        const tipPercent = tipSli.value;
-        const tip = (bill * tipPercent) / 100;
-        const total = bill + tip;
+        const tipPercent = tipSlider.value;
+        const tip = (bill * tipPercent / 100).toFixed(2);
+        const total = (bill + parseFloat(tip)).toFixed(2);
 
         if (isNaN(bill)) {
             tipAmount.value = "Invalid Input";
-            totalBillWithTip.value = "Invalid Input";
+            totalWithTip.value = "Invalid Input";
         } else {
-            tipAmount.value = tip.toFixed(2);
-            totalBillWithTip.value = total.toFixed(2);
-            tipPer.value = tipPercent + "%";
+            tipPercentage.value = tipPercent + "%";
+            tipAmount.value = tip;
+            totalWithTip.value = total;
         }
     }
 });
-
 
 
 
